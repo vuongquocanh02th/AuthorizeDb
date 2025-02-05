@@ -21,7 +21,7 @@ public class CustomSuccessHandle extends SimpleUrlAuthenticationSuccessHandler {
 
     @Override
     protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException, IOException {
-        String targetUrl = determineTargetUrl(request, response, authentication);
+        String targetUrl = determineTargetUrl(authentication);
         if (response.isCommitted()) {
             return;
         }
